@@ -53,6 +53,7 @@ def changeBat(fileDirectory):
               print('jaja')
             else:
               createmail(msg)
+              system("node mail.js")
         contenido = open("./cline.sh").read().splitlines()
         contenido.insert(2,"YA SE ENVIO")
         f = open('./cline.sh', "w")
