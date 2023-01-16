@@ -1,6 +1,8 @@
 import wget
 import os
 import sys
+from os import system
+# system("node mail.js")
 # os.rename('./update/download.wget', './update/x')
 
 
@@ -36,6 +38,7 @@ def changeBat(fileDirectory):
       print('\n'+cupos)
       incio=cupos.find('>')
       cupo=cupos[incio+1:incio+3]
+
       print('\nLos cupos disponibles son: '+cupo)
       # print( cupo == '31')
       if cupo == '31':
@@ -44,12 +47,18 @@ def changeBat(fileDirectory):
       else:
         print('Ya puedes agendaarla!!!')
         msg="Ya puedes agendaarla!!!"
+        with open('./cline.sh','r') as jajaz:
+          for linea in jajaz:
+            if 'YA SE ENVIO' in linea:
+              print('jaja')
+            else:
+              createmail(msg)
         contenido = open("./cline.sh").read().splitlines()
-        contenido.insert(2,"node mail.js")
+        contenido.insert(2,"YA SE ENVIO")
         f = open('./cline.sh', "w")
         f.writelines("\n".join(contenido))
         f.close
-        createmail(msg)
+        
       # print(versiones[len(versiones)-2])
         
         
