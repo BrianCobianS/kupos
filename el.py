@@ -5,12 +5,12 @@ import sys
 
 
 def createmail(message):
-    contenido = open("C:/Users/brian.cobian/Desktop/IMDesatendida/ola/mails/email.txt").read().splitlines()
+    contenido = open("./email.txt").read().splitlines()
     # contenido = open("/home/ebossteam/UnattendedInstallation/FULLSTACK/mails/email.txt").read().splitlines()
     contenido.insert(2,"    email: 'brian.cobian@alumnos.udg.mx',")
     contenido.insert(2,"    msg: '"+message+"',")
     # f = open('/home/ebossteam/UnattendedInstallation/FULLSTACK/mails/mail.js', "w")
-    f = open('C:/Users/brian.cobian/Desktop/IMDesatendida/ola/mails/mail.js', "w")
+    f = open('./mail.js', "w")
 
     f.writelines("\n".join(contenido))
     f.close
