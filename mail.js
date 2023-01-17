@@ -11,8 +11,8 @@ const Enviarmail= async (datos)=>{
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: 'unattendedinstallation@gmail.com', // generated ethereal user
-          pass: 'lxcyphalpqqvhuvi', // generated ethereal password
+          user: '', // generated ethereal user
+          pass: '', // generated ethereal password
         },
     });
 	const{ email, msg} = datos
